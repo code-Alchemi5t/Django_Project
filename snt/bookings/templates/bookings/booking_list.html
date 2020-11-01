@@ -1,0 +1,28 @@
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    crossorigin="anonymous">
+
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap-theme.min.css"
+    crossorigin="anonymous">
+
+<link rel="stylesheet"
+    href="https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css"
+     crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+    crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"
+    crossorigin="anonymous"></script>
+
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  crossorigin="anonymous"></script>
+<h1>Booking List</h1>
+<ul>
+    {% for booking in booking_list %}
+    <li><p>
+        {{ booking.name }}
+</p><p>package- {{ booking.package }}</p><p><a href="{% url 'bookings:booking_update' booking.id %}">Update Booking</a><a href="{% url 'bookings:booking_confirm_delete' booking.id %}"> Delete Booking</a>
+</p></li> {% endfor %}</ul>

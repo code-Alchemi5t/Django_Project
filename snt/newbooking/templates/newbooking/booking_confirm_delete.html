@@ -1,0 +1,7 @@
+<p>Are you sure you want to cancel?</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="Yes.">
+    <input type="submit" onclick="window.location='{% url 'newbooking:confirm_booking' booking.id %}' ; return false;" value="Cancel">
+</form>

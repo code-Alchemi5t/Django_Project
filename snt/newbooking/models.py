@@ -19,7 +19,7 @@ class Booking(models.Model):
     date = models.DateField()
     no_of_People=models.IntegerField(validators=[MinValueValidator(1,"Atleast one person should be on the trip!Or are you a Ghost?"),MaxValueValidator(30,"Bro a bus can only fit 30 people")])
     preferred_mode_of_travel=models.ForeignKey('Conveyance',on_delete=models.CASCADE)
-    any_special_requests=models.TextField(null=True)
+    any_special_requests=models.TextField(null=True, blank=True)
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,null=True)
     status = models.CharField(max_length=200,default='Not Confirmed')
     def __str__(self):

@@ -32,7 +32,7 @@
         {% if user.is_authenticated %}
         <a href="{% url 'logout' %}?next={% url 'home:all' %}">Logout</a>
         {% else %}
-        <a href="{% url 'login' %}?next={% url 'home:all' %}">Login</a>
+        <a href="{% url 'login' %}?next={% url 'home:all' %}">Login</a> / <a href="{% url 'user:all' %}?next={% url 'home:all' %}">Register</a>
         {% endif %}
     </li>
 </ul>

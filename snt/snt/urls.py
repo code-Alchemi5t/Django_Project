@@ -13,10 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-import os
-from django.views.static import serve
 from django.contrib import admin
-from django.contrib.auth import views as auth_views
 from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,12 +21,5 @@ urlpatterns = [
     path('bookings/', include('bookings.urls')),
     path('', include('home.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-]
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-urlpatterns += [
-    path('favicon.ico', serve, {
-            'path': 'favicon.ico',
-            'document_root': os.path.join(BASE_DIR, 'home/static'),
-        }
-    ),
+    path('user/', include('user.urls')),
 ]

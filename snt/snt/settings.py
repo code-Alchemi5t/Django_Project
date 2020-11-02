@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bookings.apps.BookingsConfig',
     'home.apps.HomeConfig',
+    'user.apps.UserConfig',
     'newbooking.apps.NewbookingConfig',
     'django_extensions',
     'crispy_forms',

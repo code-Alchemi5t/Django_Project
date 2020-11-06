@@ -31,6 +31,7 @@ class NewBookingCreate(LoginRequiredMixin, View):
         booking.save()
         return redirect(reverse('newbooking:confirm_booking', args=[booking.id]))
 
+
 class ConfirmBooking(LoginRequiredMixin, View):
     def get(self,request,pk):
         booking=Booking.objects.get(id=pk)

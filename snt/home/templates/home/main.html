@@ -1,4 +1,8 @@
-<link rel="stylesheet"
+
+{% load static %}
+{% block head %}
+  <head>
+    <meta charset="UTF-8"><link rel="stylesheet"
     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
     crossorigin="anonymous">
 
@@ -19,6 +23,10 @@
 <script
   src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
   crossorigin="anonymous"></script>
+
+    <link rel="shortcut icon" href="{% static '/favicon.ico' %}" />
+  </head>
+  {% endblock %}
 {% load crispy_forms_tags %}
 <h1>Home Page</h1>
 <ul>
